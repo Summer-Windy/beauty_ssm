@@ -26,7 +26,7 @@ public class GoodsController {
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public String list(Model model, Integer offset, Integer limit) {
 		LOG.info("invoke----------/goods/list");
-		offset = offset == null ? 0 : offset;//默认便宜0
+		offset = offset == null ? 0 : offset;//默认偏移0
 		limit = limit == null ? 50 : limit;//默认展示50条
 		List<Goods> list = goodsService.getGoodsList(offset, limit);
 		model.addAttribute("goodslist", list);
