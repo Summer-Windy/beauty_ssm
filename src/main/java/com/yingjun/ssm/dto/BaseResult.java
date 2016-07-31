@@ -15,6 +15,8 @@ public class BaseResult<T> implements Serializable {
 
 	private boolean success;
 
+    private Integer code;
+
     private T data;
 
     private String error;
@@ -53,7 +55,15 @@ public class BaseResult<T> implements Serializable {
         this.error = error;
     }
 
-	@Override
+    public Integer getCode() {
+        return code;
+    }
+
+    public void setCode(Integer code) {
+        this.code = code;
+    }
+
+    @Override
 	public String toString() {
 		return "BaseResult [success=" + success + ", data=" + data + ", error=" + error + "]";
 	}

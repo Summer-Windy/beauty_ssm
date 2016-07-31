@@ -14,6 +14,35 @@ public class ResultCode {
 		String getMsg();
 	}
 
+	public enum BASIC implements IErrorType{
+		FAIL(-1,"failed"),
+		SUCCESS(1,"success"),
+		SYS_ERROR(2,"system error"),
+		INVALID_PARAM(3,"invalid parameters"),
+		NO_AUTH(4,"not authed"),
+		NO_LOGIN(5,"please login"),
+		;
+
+		private int code;
+		private String msg;
+
+		BASIC(int code, String msg) {
+			this.code = code;
+			this.msg = msg;
+		}
+
+		@Override
+		public int getCode() {
+			return 0;
+		}
+
+		@Override
+		public String getMsg() {
+			return null;
+		}
+	}
+
+
 	public enum DB implements IErrorType {
 		// 数据库想操作异常
 		DB_INSERT_RESULT_ERROR(99990001, "db insert error"),
